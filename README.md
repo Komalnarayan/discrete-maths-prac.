@@ -181,7 +181,59 @@ else:
 ```
 
 
+**practical-7**
+```
+class Graph:
+    def __init__(self, vertices, graph_type):
+        self.vertices = vertices
+        self.graph_type = graph_type  # Add graph_type as a parameter in the constructor
+        self.adj_list = [[] for _ in range(vertices)]
 
+    def add_edge(self, u, v):
+        if self.graph_type == 1:  # Undirected graph
+            self.adj_list[u].append(v)
+            self.adj_list[v].append(u)
+        else:  # Directed graph
+            self.adj_list[u].append(v)
+
+    def is_complete(self):
+        # Check if the graph is complete
+        for i in range(self.vertices):
+            for j in range(self.vertices):
+                if i != j and j not in self.adj_list[i]:
+                    return False
+        return True
+
+    def get_list(self):
+        return self.adj_list
+
+if __name__ == "__main__":
+    # Input for graph type and number of vertices
+    graph_type = int(input("Enter Your Graph Type (1. Undirected, 2. Directed): "))
+    num_vertices = int(input("Enter number of vertices: "))
+
+    # Create a graph object with the given number of vertices and graph type
+    g = Graph(num_vertices, graph_type)
+
+    # Input number of edges and edges themselves
+    num = int(input("Enter number of edges: "))
+    for i in range(num):
+        a = int(input(f"Enter first vertex of edge {i+1}: "))
+        b = int(input(f"Enter second vertex of edge {i+1}: "))
+        g.add_edge(a, b)
+
+    # Print the adjacency list (representing the graph)
+    print("Your Adjacency List is:\n", g.get_list())
+
+    # Check and print if the graph is complete or not
+    if g.is_complete():
+        print("The graph is a complete graph.")
+    else:
+        print("The graph is not a complete graph.")
+```
+
+
+****
 
 
 
