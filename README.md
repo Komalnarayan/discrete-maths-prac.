@@ -41,13 +41,13 @@ B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
 
-# 2. power_set
 print("\nPower Set of A:")
 for subset in A.power_set():
     print(set(subset))
          
 ```
 # is_subset
+```
 from itertools import chain, combinations
 
 class SET:
@@ -56,16 +56,7 @@ class SET:
             elements = []
         self.elements = set(elements)
 
-    
-from itertools import chain, combinations
-
-class SET:
-    def __init__(self, elements=None):
-        if elements is None:
-            elements = []
-        self.elements = set(elements)
-
-    
+  
     def is_subset(self, other_set):
         return self.elements.issubset(other_set.elements)
 
@@ -75,7 +66,6 @@ A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
-# 3. is_subset
 print("\nA is subset of B:", A.is_subset(B))
 print("B is subset of A:", B.is_subset(A))
 ```
@@ -98,12 +88,7 @@ A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
-
-
-
-
 print("\nUnion of A and B:", A.union(B))
-```
 ```
 # 5. intersection
 ```
@@ -165,9 +150,6 @@ class SET:
             elements = []
         self.elements = set(elements)
 
-    def is_member(self, elem):
-        return elem in self.elements
-
     
     
 
@@ -185,6 +167,7 @@ print("B - A:", B.set_difference(A))
 
 ```
 # 8.symmetric
+```
 from itertools import chain, combinations
 
 class SET:
@@ -237,6 +220,7 @@ for pair in A.cartesian_product(B):
 
 
 **practical 2**
+
 ```
 from numpy import array
 
