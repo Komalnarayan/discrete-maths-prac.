@@ -1,4 +1,255 @@
-# discrete-maths-prac.   **practical 2**
+# discrete-maths-prac.
+# program 1 without menu
+# is member
+
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    def is_member(self, elem):
+        return elem in self.element   
+
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+```
+# powerset
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+
+    def power_set(self):
+        s = list(self.elements)
+        return list(chain.from_iterable(combinations(s, r) for r in range(len(s) + 1)))
+
+    
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+# 2. power_set
+print("\nPower Set of A:")
+for subset in A.power_set():
+    print(set(subset))
+         
+```
+# 3is_subset
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    def is_subset(self, other_set):
+        return self.elements.issubset(other_set.elements)
+
+    
+    
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+# 3. is_subset
+print("\nA is subset of B:", A.is_subset(B))
+print("B is subset of A:", B.is_subset(A))
+```
+# 4.union
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    def union(self, other_set):
+        return self.elements.union(other_set.elements)
+
+    
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+
+
+# 4. union
+print("\nUnion of A and B:", A.union(B))
+```
+```
+# 5. intersection
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    
+    def intersection(self, other_set):
+        return self.elements.intersection(other_set.elements)
+
+    
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+# 5. intersection
+print("Intersection of A and B:", A.intersection(B))
+
+```
+# 6. complement
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    def complement(self, universal_set):
+        return universal_set.elements.difference(self.elements)
+
+    
+
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+
+# 6. complement
+print("Complement of A (U - A):", A.complement(U))
+print("Complement of B (U - B):", B.complement(U))
+
+```
+# 7.set diff.
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    def is_member(self, elem):
+        return elem in self.elements
+
+    
+    
+
+    def set_difference(self, other_set):
+        return self.elements.difference(other_set.elements)
+
+    
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+# 7. set_difference
+print("A - B:", A.set_difference(B))
+print("B - A:", B.set_difference(A))
+
+
+```
+# 8.symmetric
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    def symmetric_difference(self, other_set):
+        return self.elements.symmetric_difference(other_set.elements)
+
+    def cartesian_product(self, other_set):
+        return {(a, b) for a in self.elements for b in other_set.elements}
+
+
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+# 8. symmetric_difference
+print("Symmetric Difference (A Δ B):", A.symmetric_difference(B))
+
+```
+# 9. Cartesian product
+```
+from itertools import chain, combinations
+
+class SET:
+    def __init__(self, elements=None):
+        if elements is None:
+            elements = []
+        self.elements = set(elements)
+
+    
+    def cartesian_product(self, other_set):
+        return {(a, b) for a in self.elements for b in other_set.elements}
+
+
+# --- Define Sets Here ---
+A = SET(['1', '2', '3'])
+B = SET(['3', '4', '5'])
+U = SET(['1', '2', '3', '4', '5', '6'])
+
+
+
+# 9. cartesian_product
+print("Cartesian Product (A × B):")
+for pair in A.cartesian_product(B):
+    print(pair)
+```
+
+
+**practical 2**
 ```
 from numpy import array
 
@@ -231,7 +482,38 @@ if __name__ == "__main__":
     else:
         print("The graph is not a complete graph.")
 ```
+# PRACTICAL_8
+```
+def compute_degrees():
+    # Accept number of vertices
+    n = int(input("Enter number of vertices: "))
+    # Initialize adjacency list
+    adj_list = [[] for _ in range(n)]
+    # Accept number of edges
+    e = int(input("Enter number of edges: "))
+    print("Enter edges (from to):")
+    for _ in range(e):
+        u, v = map(int, input().split())
+        adj_list[u].append(v)
+    
+    # Initialize in-degree and out-degree
+    in_degree = [0] * n
+    out_degree = [0] * n
 
+    # Compute degrees
+    for u in range(n):
+        out_degree[u] = len(adj_list[u])
+        for v in adj_list[u]:
+            in_degree[v] += 1
+    
+    # Print the results
+    print("\nVertex\tIn-Degree\tOut-Degree")
+    for i in range(n):
+        print(f"{i}\t{in_degree[i]}\t\t{out_degree[i]}")
+# Run the program
+compute_degrees()
+
+```
 
 ****
 
