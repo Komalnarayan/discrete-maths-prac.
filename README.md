@@ -14,7 +14,7 @@ class SET:
     def is_member(self, elem):
         return elem in self.element   
 
-# --- Define Sets Here ---
+
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
@@ -35,8 +35,7 @@ class SET:
         s = list(self.elements)
         return list(chain.from_iterable(combinations(s, r) for r in range(len(s) + 1)))
 
-    
-# --- Define Sets Here ---
+
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
@@ -48,7 +47,7 @@ for subset in A.power_set():
     print(set(subset))
          
 ```
-# 3is_subset
+# is_subset
 from itertools import chain, combinations
 
 class SET:
@@ -72,7 +71,6 @@ class SET:
 
     
     
-# --- Define Sets Here ---
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
@@ -96,7 +94,6 @@ class SET:
         return self.elements.union(other_set.elements)
 
     
-# --- Define Sets Here ---
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
@@ -104,7 +101,7 @@ U = SET(['1', '2', '3', '4', '5', '6'])
 
 
 
-# 4. union
+
 print("\nUnion of A and B:", A.union(B))
 ```
 ```
@@ -124,13 +121,13 @@ class SET:
         return self.elements.intersection(other_set.elements)
 
     
-# --- Define Sets Here ---
+
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
 
-# 5. intersection
+
 print("Intersection of A and B:", A.intersection(B))
 
 ```
@@ -149,15 +146,11 @@ class SET:
         return universal_set.elements.difference(self.elements)
 
     
-
-# --- Define Sets Here ---
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
 
-
-# 6. complement
 print("Complement of A (U - A):", A.complement(U))
 print("Complement of B (U - B):", B.complement(U))
 
@@ -182,13 +175,10 @@ class SET:
         return self.elements.difference(other_set.elements)
 
     
-# --- Define Sets Here ---
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
-
-# 7. set_difference
 print("A - B:", A.set_difference(B))
 print("B - A:", B.set_difference(A))
 
@@ -211,12 +201,11 @@ class SET:
         return {(a, b) for a in self.elements for b in other_set.elements}
 
 
-# --- Define Sets Here ---
+
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
-# 8. symmetric_difference
 print("Symmetric Difference (A Δ B):", A.symmetric_difference(B))
 
 ```
@@ -235,14 +224,12 @@ class SET:
         return {(a, b) for a in self.elements for b in other_set.elements}
 
 
-# --- Define Sets Here ---
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
 
 
 
-# 9. cartesian_product
 print("Cartesian Product (A × B):")
 for pair in A.cartesian_product(B):
     print(pair)
