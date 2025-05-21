@@ -12,12 +12,17 @@ class SET:
         self.elements = set(elements)
 
     def is_member(self, elem):
-        return elem in self.element   
-
+        return elem in self.elements
 
 A = SET(['1', '2', '3'])
 B = SET(['3', '4', '5'])
 U = SET(['1', '2', '3', '4', '5', '6'])
+
+# Example print line to check if '3' is a member of set A
+print("'3' is a member of A:", A.is_member('3'))
+
+
+
 ```
 # powerset
 ```
